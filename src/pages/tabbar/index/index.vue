@@ -1,8 +1,10 @@
 <template>
   <div>
-    <Layout>
-       首页
-    </Layout>
+    <!-- <Layout> -->
+      <KView class="extra_class">kboneui</KView>
+      <KButton type="primary" @click.stop="handleShowToast" >Toast</KButton>
+      <button type="primary">123</button>
+    <!-- </Layout> -->
   </div>
 </template>
 
@@ -20,7 +22,10 @@ export default Vue.extend({
 
   },
   methods: {
-    onClickJump() {
+    handleShowToast() {
+      this.$api.showToast({
+        title: '加载成功'
+      })
     },
 
     onClickOpen() {

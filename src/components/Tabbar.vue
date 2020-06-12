@@ -53,7 +53,9 @@ export default Vue.extend({
     }
   },
   mounted() {
-    console.log(this.$route)
+    console.log('-----------------> this.$route', this.$route)
+    console.log('-----------------> this.$api', this.$api)
+
     const path = this.$route.path
     switch (path) {
       case '/index' || '/':
