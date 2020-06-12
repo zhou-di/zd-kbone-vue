@@ -3,24 +3,17 @@ import Router from 'vue-router'
 import { sync } from 'vuex-router-sync'
 import App from '../../App.vue'
 import store from '../../store'
-import Home from '../../home/Index.vue'
+import Index from '../../pages/tabbar/index/index.vue'
 
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'history',
+  mode: 'hash',
   routes: [{
-    path: '/(home|index)?',
-    name: 'Home',
-    component: Home,
-  }, {
-    path: '/index.html',
-    name: 'HomeHtml',
-    component: Home,
-  }, {
-    path: '/test/(home|index)',
-    name: 'HomeTest',
-    component: Home,
+    path: '/',
+    // path: '/index',
+    name: 'Index',
+    component: Index,
   }],
 })
 

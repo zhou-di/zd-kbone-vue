@@ -1,17 +1,18 @@
 /**
  * 配置参考：https://wechat-miniprogram.github.io/kbone/docs/config/
  */
+const path = require('path')
 
 module.exports = {
     origin: 'https://test.miniprogram.com',
     entry: '/',
     router: {
-        home: [
+        index: [
             '/(home|index)?',
             '/index.html',
             '/test/(home|index)',
         ],
-        other: [
+        me: [
             '/test/list/:id',
             '/test/detail/:id',
         ],
@@ -22,15 +23,33 @@ module.exports = {
     },
     generate: {
         autoBuildNpm: 'npm',
+        tabBar: {
+            color: '#000000',
+            selectedColor: '#07c160',
+            backgroundColor: '#ffffff',
+            list: [{
+                pageName: 'index',
+                text: '首页',
+                iconPath: path.resolve(__dirname, '../src/images/page1.png'),
+                selectedIconPath: path.resolve(__dirname, '../src/images/page1-sel.png'),
+            }, {
+                pageName: 'me',
+                text: '个人中心',
+                iconPath: path.resolve(__dirname, '../src/images/page2.png'),
+                selectedIconPath: path.resolve(__dirname, '../src/images/page2-sel.png'),
+            }],
+            // 使用自定义 tabBar
+            // custom: path.join(__dirname, '../src/custom-tab-bar'),
+        }
     },
     app: {
         backgroundTextStyle: 'dark',
         navigationBarTextStyle: 'white',
         navigationBarTitleText: 'kbone',
     },
-	appExtraConfig: {
+    appExtraConfig: {
         sitemapLocation: 'sitemap.json',
-	},
+    },
     global: {
         share: true,
         windowScroll: false,
@@ -38,18 +57,18 @@ module.exports = {
     },
     pages: {},
     optimization: {
-		domSubTreeLevel: 10,
+        domSubTreeLevel: 10,
 
-		elementMultiplexing: true,
-		textMultiplexing: true,
-		commentMultiplexing: true,
-		domExtendMultiplexing: true,
+        elementMultiplexing: true,
+        textMultiplexing: true,
+        commentMultiplexing: true,
+        domExtendMultiplexing: true,
 
-		styleValueReduce: 5000,
-		attrValueReduce: 5000,
-	},
+        styleValueReduce: 5000,
+        attrValueReduce: 5000,
+    },
     projectConfig: {
         projectname: 'kbone-template-vue',
-        appid: '',
+        appid: 'wxa4ef66f9e1a4046e',
     },
 }

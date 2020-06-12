@@ -3,21 +3,17 @@ import Router from 'vue-router'
 import { sync } from 'vuex-router-sync'
 import App from '../../App.vue'
 import store from '../../store'
-import List from '../../list/Index.vue'
-import Detail from '../../detail/Index.vue'
+import Me from '../../pages/tabbar/me/index.vue'
 
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'history',
+  mode: 'hash',
   routes: [{
-    path: '/test/list/:id',
-    name: 'List',
-    component: List,
-  }, {
-    path: '/test/detail/:id',
-    name: 'Detail',
-    component: Detail,
+    path: '/',
+    // path: '/me',
+    name: 'Me',
+    component: Me,
   }],
 })
 
