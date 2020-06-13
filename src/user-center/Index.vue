@@ -87,7 +87,12 @@ export default Vue.extend({
       if (process.env.isMiniprogram) {
         window.open('/native')
       } else {
-        window.location.href = '/native'
+        // window.location.href = '/native'
+        // this.$router.push('/native')
+        console.log(this.$router.options.routes)
+        this.$router.push({
+          path: '/native'
+        })
       }
     }
   },
