@@ -4,8 +4,11 @@
 
 module.exports = {
     origin: 'https://test.miniprogram.com',
-    entry: '/',
+    entry: '/user-center',
     router: {
+        'user-center': [
+            '/user-center'
+        ],
         home: [
             '/(home|index)?',
             '/index.html',
@@ -35,6 +38,7 @@ module.exports = {
         share: true,
         windowScroll: false,
         backgroundColor: '#F7F7F7',
+        rem: true,
     },
     pages: {},
     optimization: {
@@ -50,6 +54,6 @@ module.exports = {
 	},
     projectConfig: {
         projectname: 'kbone-template-vue',
-        appid: '',
+        appid: 'wxa4ef66f9e1a4046e',
     },
 }

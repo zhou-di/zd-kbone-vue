@@ -10,7 +10,11 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [{
-    path: '/(home|index)?',
+    path: '/(user-center)?',
+    name: 'UserCenter',
+    component: () => import(/* webpackChunkName: "Detail" */'@/user-center/Index.vue'),
+  }, {
+    path: '/home',
     name: 'Home',
     component: Home,
   }, {
