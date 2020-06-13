@@ -1,8 +1,14 @@
 <template>
   <div class="cnt">
     <Header></Header>
-    <p id="p">同层渲染</p>
-    <KButton class="button" type="primary" @click="goBack">返回</KButton>
+    <!-- <p id="p">同层渲染</p> -->
+    <!-- <KButton class="button" type="primary" @click="goBack">返回</KButton> -->
+    <!-- <video :src="src"></video> -->
+    <div class="textarea-container">
+      <textarea value placeholder-style="color: #ff5257;" placeholder="点击输入..." />
+      <!-- <cover-view class="mask"></cover-view> -->
+    </div>
+    <div class="mask"></div>
     <Footer></Footer>
   </div>
 </template>
@@ -20,7 +26,7 @@ export default Vue.extend({
   },
   data() {
     return {
-
+      src: 'https://media.yitong.com/mp-eqiq/classroom/video/free-video.mp4'
     }
   },
   created() {
@@ -42,20 +48,38 @@ export default Vue.extend({
 </script>
 
 <style lang="less">
-.swiper-item {
-  width: 100%;
+.cnt {
   height: 100%;
 }
-.demo-text-1 {
-  background-color: #1AAD19;
+video {
+  width: 80%;
+  height: 500rpx;
 }
-.demo-text-2 {
-  background-color: #2782D7;
+
+.textarea-container {
+  margin: 30px !important;
+  height: 200px;
 }
-.demo-text-3 {
-  background-color: #F1F1F1;
+textarea {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 20rpx;
+  border-radius: 20rpx;
+  height: 500rpx;
+  background-color: #f4f4f4;
+  padding: 30rpx;
+  box-sizing: border-box;
+  flex: 1;
 }
-.button {
-  margin-top: 0.3rem;
+
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000000;
+  opacity: 0.3;
 }
 </style>

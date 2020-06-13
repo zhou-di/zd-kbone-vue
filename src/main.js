@@ -4,8 +4,10 @@ import router from './router'
 import store from './store'
 import { sync } from 'vuex-router-sync'
 import KboneUI from 'kbone-ui'
-import 'kbone-ui/lib/weui/weui.css'
 import kboneAPI from 'kbone-api'
+import 'kbone-ui/lib/weui/weui.css'
+import './style/index.css'
+import './style/reset.css'
 
 Vue.use(KboneUI)
 Vue.use(kboneAPI)
