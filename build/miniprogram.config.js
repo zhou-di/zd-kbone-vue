@@ -7,15 +7,18 @@ module.exports = {
     origin: 'https://test.miniprogram.com',
     entry: '/',
     router: {
-        index: [
-            '/(home|index)?',
-            '/index.html',
-            '/test/(home|index)',
+        page1: [
+            '/#/page1',
         ],
-        me: [
-            '/test/list/:id',
-            '/test/detail/:id',
-        ],
+        // index: [
+        //     '/(home|index)?',
+        //     '/index.html',
+        //     '/test/(home|index)',
+        // ],
+        // me: [
+        //     '/test/list/:id',
+        //     '/test/detail/:id',
+        // ],
     },
     redirect: {
         notFound: 'home',
@@ -40,7 +43,18 @@ module.exports = {
             }],
             // 使用自定义 tabBar
             // custom: path.join(__dirname, '../src/custom-tab-bar'),
-        }
+        },
+        // 分包
+        subpackages: {
+            index: [
+                'page1',
+                'page2'
+            ],
+            me: [
+                'page3',
+                'page4'
+            ],
+        },
     },
     app: {
         backgroundTextStyle: 'dark',

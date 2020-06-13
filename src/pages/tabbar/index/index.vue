@@ -1,10 +1,11 @@
 <template>
   <div>
-    <!-- <Layout> -->
+    <Layout>
       <KView class="extra_class">kboneui</KView>
       <KButton type="primary" @click.stop="handleShowToast" >Toast</KButton>
-      <button type="primary">123</button>
-    <!-- </Layout> -->
+      <KButton type="primary" @click.stop="goPage1" >跳转page1</KButton>
+      <a href="/#/page1">跳转page1</a>
+    </Layout>
   </div>
 </template>
 
@@ -28,7 +29,11 @@ export default Vue.extend({
       })
     },
 
-    onClickOpen() {
+    goPage1() {
+      console.log(window)
+      // console.log(window)
+      // console.log(window)
+      window.location.href = '/#/page1'
     },
   },
 })

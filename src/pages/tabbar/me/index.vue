@@ -1,7 +1,8 @@
 <template>
   <div>
     <Layout>
-       个人中心
+      个人中心
+      <KButton type="primary">Toast</KButton>
     </Layout>
   </div>
 </template>

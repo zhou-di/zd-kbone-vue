@@ -11,7 +11,7 @@ export default new Router({
   mode: 'hash',
   routes: [
     {
-      path: '/(index)?',
+      path: '/(home|index)?',
       name: 'Index',
       component: () => import(/* webpackChunkName: "Detail" */'@/pages/tabbar/index/index.vue'),
     },
@@ -19,6 +19,26 @@ export default new Router({
       path: '/me',
       name: 'Me',
       component: () => import(/* webpackChunkName: "Detail" */'@/pages/tabbar/me/index.vue'),
+    },
+    {
+      path: '/page1',
+      name: 'Page1',
+      component: () => import(/* webpackChunkName: "Detail" */'@/pages/subPackages/page1/App.vue'),
+    },
+    {
+      path: '/page2',
+      name: 'Page2',
+      component: () => import(/* webpackChunkName: "Detail" */'@/pages/subPackages/page2/App.vue'),
+    },
+    {
+      path: '/page3',
+      name: 'Page3',
+      component: () => import(/* webpackChunkName: "Detail" */'@/pages/subPackages/page3/App.vue'),
+    },
+    {
+      path: '/page4',
+      name: 'Page4',
+      component: () => import(/* webpackChunkName: "Detail" */'@/pages/subPackages/page4/App.vue'),
     },
     // {
     //   path: '/(home|home2)?',
