@@ -15,6 +15,7 @@
     </KSwiper>
     <KButton class="button" type="primary">KButton</KButton>
     <KButton class="button" type="primary" @click="showToast">toast</KButton>
+    <KButton class="button" type="primary" @click="goPage">跳转页面</KButton>
     <Footer></Footer>
   </div>
 </template>
@@ -80,6 +81,13 @@ export default Vue.extend({
         title: '我是toast',
         icon: 'none'
       })
+    },
+    goPage() {
+      if (process.env.isMiniprogram) {
+        window.open('/native')
+      } else {
+        window.location.href = '/native'
+      }
     }
   },
 })

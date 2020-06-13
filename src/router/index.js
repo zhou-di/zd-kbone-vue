@@ -14,6 +14,10 @@ export default new Router({
     name: 'UserCenter',
     component: () => import(/* webpackChunkName: "Detail" */'@/user-center/Index.vue'),
   }, {
+    path: '/native',
+    name: 'Native',
+    component: () => import(/* webpackChunkName: "Detail" */'@/native/Index.vue'),
+  }, {
     path: '/home',
     name: 'Home',
     component: Home,
