@@ -7568,6 +7568,11 @@ vue-loader@^15.7.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-page-stack@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.npm.taobao.org/vue-page-stack/download/vue-page-stack-1.4.1.tgz#b6377f00e461bcf2099c2be410b736284b115e8a"
+  integrity sha1-tjd/AORhvPIJnCvkELc2KEsRXoo=
+
 vue-router@^3.0.1:
   version "3.3.4"
   resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-3.3.4.tgz#4e38abc34a11c41b6c3d8244449a2e363ba6250b"
