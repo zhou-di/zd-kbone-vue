@@ -25,6 +25,7 @@ module.exports = {
     },
     generate: {
         autoBuildNpm: 'npm',
+        appEntry: 'miniprogram-app',
     },
     app: {
         backgroundTextStyle: 'dark',

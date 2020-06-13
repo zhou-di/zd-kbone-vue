@@ -42,10 +42,10 @@ export default Vue.extend({
     window.onload = () => {
       if (process.env.isMiniprogram) {
         // 小程序
-        document.documentElement.style.fontSize = wx.getSystemInfoSync().screenWidth / 16 + 'px'
+        document.documentElement.style.fontSize = `${wx.getSystemInfoSync().screenWidth / 16}px`
       } else {
         // Web 端
-        document.documentElement.style.fontSize = document.documentElement.getBoundingClientRect().width / 16 + 'px'
+        document.documentElement.style.fontSize = `${document.documentElement.getBoundingClientRect().width / 16}px`
       }
     }
     window.addEventListener('wxload', (query: any) => console.log('page2 wxload', query))
