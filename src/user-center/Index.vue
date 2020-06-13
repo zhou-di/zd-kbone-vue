@@ -39,6 +39,15 @@ export default Vue.extend({
     }
   },
   created() {
+    window.onload = () => {
+      if (process.env.isMiniprogram) {
+        // 小程序
+        document.documentElement.style.fontSize = wx.getSystemInfoSync().screenWidth / 16 + 'px'
+      } else {
+        // Web 端
+        document.documentElement.style.fontSize = document.documentElement.getBoundingClientRect().width / 16 + 'px'
+      }
+    }
     window.addEventListener('wxload', (query: any) => console.log('page2 wxload', query))
     window.addEventListener('wxshow', () => console.log('page2 wxshow'))
     window.addEventListener('wxready', () => console.log('page2 wxready'))
