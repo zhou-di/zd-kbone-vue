@@ -16,6 +16,7 @@
     <KButton class="button" type="primary">KButton</KButton>
     <KButton class="button" type="primary" @click="showToast">toast</KButton>
     <KButton class="button" type="primary" @click="goPage">跳转页面</KButton>
+    <KButton class="button" type="primary" @click="goLogin">登录</KButton>
     <Footer></Footer>
   </div>
 </template>
@@ -92,6 +93,18 @@ export default Vue.extend({
         console.log(this.$router.options.routes)
         this.$router.push({
           path: '/native'
+        })
+      }
+    },
+    goLogin() {
+      if (process.env.isMiniprogram) {
+        window.open('/user-center/login')
+      } else {
+        // window.location.href = '/native'
+        // this.$router.push('/native')
+        console.log(this.$router.options.routes)
+        this.$router.push({
+          path: '/user-center/login'
         })
       }
     }

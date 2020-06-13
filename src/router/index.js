@@ -18,6 +18,10 @@ export default new Router({
     name: 'Native',
     component: () => import(/* webpackChunkName: "Detail" */'@/native/Index.vue'),
   }, {
+    path: '/user-center/login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "Detail" */'@/login/Index.vue'),
+  }, {
     path: '/home',
     name: 'Home',
     component: Home,
