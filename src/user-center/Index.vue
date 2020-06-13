@@ -1,6 +1,7 @@
 <template>
   <div class="cnt">
-    <Header></Header>用户中心
+    <Header></Header>
+    <p id="p">用户中心</p>
     <KSwiper
       :indicator-dots="indicatorDots"
       :circular="circularFlag"
@@ -13,6 +14,7 @@
       </KSwiperItem>
     </KSwiper>
     <KButton class="button" type="primary">KButton</KButton>
+    <KButton class="button" type="primary" @click="showToast">toast</KButton>
     <Footer></Footer>
   </div>
 </template>
@@ -39,25 +41,46 @@ export default Vue.extend({
     }
   },
   created() {
-    window.onload = () => {
-      if (process.env.isMiniprogram) {
-        // 小程序
-        document.documentElement.style.fontSize = `${wx.getSystemInfoSync().screenWidth / 16}px`
-      } else {
-        // Web 端
-        document.documentElement.style.fontSize = `${document.documentElement.getBoundingClientRect().width / 16}px`
-      }
-    }
+    // window.onload = () => {
+    //   if (process.env.isMiniprogram) {
+    //     // 小程序
+    //     document.documentElement.style.fontSize = `${wx.getSystemInfoSync().screenWidth / 16}px`
+    //   } else {
+    //     // Web 端
+    //     document.documentElement.style.fontSize = `${document.documentElement.getBoundingClientRect().width / 16}px`
+    //   }
+    // }
     window.addEventListener('wxload', (query: any) => console.log('page2 wxload', query))
     window.addEventListener('wxshow', () => console.log('page2 wxshow'))
     window.addEventListener('wxready', () => console.log('page2 wxready'))
     window.addEventListener('wxhide', () => console.log('page2 wxhide'))
     window.addEventListener('wxunload', () => console.log('page2 wxunload'))
+
+    console.log(1, window.localStorage)
+    console.log(2, document)
+    console.log(3, document.getElementById)
+  },
+  mounted() {
+    console.log(4, document.getElementById('p'))
+    const pElement = document.getElementById('p')
+    pElement.style.backgroundColor = 'red'
+    // window.$$extend('window.location', {
+    //   testStr: 'I am location',
+    //   testFunc() {
+    //     return `Hello, ${123}`
+    //   },
+    // })
   },
   methods: {
     onClickJump() {
       window.location.href = '/home'
     },
+    showToast() {
+      this.$api.showToast({
+        title: '我是toast',
+        icon: 'none'
+      })
+    }
   },
 })
 </script>

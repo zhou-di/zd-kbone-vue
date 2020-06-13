@@ -6,8 +6,10 @@ import store from '../../store'
 import UserCenter from '../../user-center/Index.vue'
 import KboneUI from 'kbone-ui'
 import 'kbone-ui/lib/weui/weui.css'
+import kboneAPI from 'kbone-api'
 
 Vue.use(KboneUI)
+Vue.use(kboneAPI)
 
 Vue.use(Router)
 

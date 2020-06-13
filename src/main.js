@@ -5,8 +5,10 @@ import store from './store'
 import { sync } from 'vuex-router-sync'
 import KboneUI from 'kbone-ui'
 import 'kbone-ui/lib/weui/weui.css'
+import kboneAPI from 'kbone-api'
 
 Vue.use(KboneUI)
+Vue.use(kboneAPI)
 
 Vue.config.productionTip = false
 
