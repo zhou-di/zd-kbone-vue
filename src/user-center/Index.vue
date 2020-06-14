@@ -17,6 +17,7 @@
     <KButton class="button" type="primary" @click="showToast">toast</KButton>
     <KButton class="button" type="primary" @click="goPage">跳转页面</KButton>
     <KButton class="button" type="primary" @click="goLogin">登录</KButton>
+    <KButton class="button" type="primary" id="k-button">jquery</KButton>
     <Footer></Footer>
   </div>
 </template>
@@ -73,6 +74,13 @@ export default Vue.extend({
     //     return `Hello, ${123}`
     //   },
     // })
+    console.log('---------通过jquery获取元素')
+    // $('#k-button').on('click', () => {
+    //   console.log(1)
+    // })
+    document.getElementById('k-button').onclick = () => {
+      console.log(1)
+    }
   },
   methods: {
     onClickJump() {

@@ -17,6 +17,7 @@
     "build:mp": "rimraf dist/mp/common && cross-env NODE_ENV=production webpack --config build/webpack.mp.config.js --progress --hide-modules"
   },
   "dependencies": {
+    "jquery": "^3.5.1",
     "kbone-api": "^0.2.1",
     "kbone-ui": "^0.6.7",
     "vue": "^2.5.2",
