@@ -54,7 +54,10 @@ export default Vue.extend({
     //     `${document.documentElement.getBoundingClientRect().width / 16}px`
     //   }
     // }
-    window.addEventListener('wxload', (query: any) => console.log('page2 wxload', query))
+    window.addEventListener('wxload', (query: any) => {
+      console.log('page2 wxload', query)
+      // console.log(5, getCurrentPage())
+    })
     window.addEventListener('wxshow', () => console.log('page2 wxshow'))
     window.addEventListener('wxready', () => console.log('page2 wxready'))
     window.addEventListener('wxhide', () => console.log('page2 wxhide'))
