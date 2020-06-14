@@ -97,8 +97,15 @@ export default Vue.extend({
       }
     },
     goLogin() {
+      // this.$router.push({
+      //   path: '/user-center/login'
+      // })
       if (process.env.isMiniprogram) {
         window.open('/user-center/login')
+        // window.location.href = '/user-center/login'
+        // this.$api.navigateTo({
+        //   url: '/pages/login/index'
+        // })
       } else {
         // window.location.href = '/native'
         // this.$router.push('/native')
