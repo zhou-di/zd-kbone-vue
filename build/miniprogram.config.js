@@ -9,6 +9,9 @@ module.exports = {
         'user-center': [
             '/user-center'
         ],
+        'login': [
+            '/user-center/login'
+        ],
         native: [
             '/native'
         ],

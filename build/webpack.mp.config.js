@@ -19,6 +19,7 @@ module.exports = {
     // js 入口
     'miniprogram-app': path.resolve(__dirname, '../src/app.js'),
     'user-center': path.resolve(__dirname, '../src/mp/user-center/main.mp.js'),
+    'login': path.resolve(__dirname, '../src/mp/user-center/main.mp.js'),
     'native': path.resolve(__dirname, '../src/mp/native/main.mp.js'),
     home: path.resolve(__dirname, '../src/mp/home/main.mp.js'),
     other: path.resolve(__dirname, '../src/mp/other/main.mp.js'),

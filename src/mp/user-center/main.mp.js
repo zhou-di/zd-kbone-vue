@@ -4,6 +4,7 @@ import { sync } from 'vuex-router-sync'
 import App from '../../App.vue'
 import store from '../../store'
 import UserCenter from '../../user-center/Index.vue'
+import Login from '../../login/Index.vue'
 import KboneUI from 'kbone-ui'
 import 'kbone-ui/lib/weui/weui.css'
 import kboneAPI from 'kbone-api'
@@ -19,6 +20,10 @@ const router = new Router({
     path: '/user-center',
     name: 'UserCenter',
     component: UserCenter,
+  }, {
+    path: '/user-center/login',
+    name: 'Login',
+    component: Login,
   }],
 })
 
