@@ -7,7 +7,7 @@ const Detail = () => import(/* webpackChunkName: "Detail" */'@/detail/Index.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   routes: [{
     path: '/(user-center)?',
@@ -41,5 +41,17 @@ export default new Router({
     path: '/test/detail/:id',
     name: 'Detail',
     component: Detail,
-  }],
+  }]
 })
+
+router.beforeEach((to, from, next) => {
+  console.log('------------- to', to)
+  console.log('------------- form', from)
+  // if (to.name !== 'Login') {
+
+  // }
+  // else
+  next()
+})
+
+export default router

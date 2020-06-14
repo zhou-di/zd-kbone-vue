@@ -18,12 +18,26 @@ export default Vue.extend({
     Footer
   },
   created() {
-    window.addEventListener('wxload', (query: any) => console.log('page2 wxload', query))
-    window.addEventListener('wxshow', () => console.log('page2 wxshow'))
-    window.addEventListener('wxready', () => console.log('page2 wxready'))
-    window.addEventListener('wxhide', () => console.log('page2 wxhide'))
-    window.addEventListener('wxunload', () => console.log('page2 wxunload'))
+    console.log(1, this.$route)
+    // this.$api.showModal({
+    //   title: '提示',
+    //   content: 'JSON.stringify(this.$route)'
+    // })
+    window.addEventListener('wxload', (query: any) => {
+      console.log('login wxload', query)
+      // this.$api.showModal({
+      //   title: '提示',
+      //   content: JSON.stringify(query)
+      // })
+    })
+    window.addEventListener('wxshow', () => console.log('login wxshow'))
+    window.addEventListener('wxready', () => console.log('login wxready'))
+    window.addEventListener('wxhide', () => console.log('login wxhide'))
+    window.addEventListener('wxunload', () => console.log('login wxunload'))
   },
+  // beforeRouteEnter(to, from, next) {
+  //   console.log(2, to, from, next)
+  // },
   methods: {
     login() {
       return this.$api.login().then((result) => {

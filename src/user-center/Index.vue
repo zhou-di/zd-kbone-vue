@@ -101,8 +101,8 @@ export default Vue.extend({
       //   path: '/user-center/login'
       // })
       if (process.env.isMiniprogram) {
-        window.open('/user-center/login')
-        // window.location.href = '/user-center/login'
+        window.open('/user-center/login?a=1')
+        // window.location.href = '/user-center/login?a=1&b=2'
         // this.$api.navigateTo({
         //   url: '/pages/login/index'
         // })
@@ -111,7 +111,11 @@ export default Vue.extend({
         // this.$router.push('/native')
         console.log(this.$router.options.routes)
         this.$router.push({
-          path: '/user-center/login'
+          path: '/user-center/login',
+          query: {
+            a: 1,
+            b: 2
+          }
         })
       }
     }
